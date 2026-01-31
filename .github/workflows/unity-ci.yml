@@ -5,10 +5,6 @@ on:
     branches: [ master ]
   pull_request:
 
-concurrency:
-  group: unity-ci-${{ github.ref }}
-  cancel-in-progress: true
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -22,13 +18,10 @@ jobs:
           path: Library
           key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
 
-      - name: Activate Unity
-        uses: game-ci/unity-activate@v2
-        with:
-          unityLicense: ${{ secrets.UNITY_LICENSE }}
-
       - name: Build project
         uses: game-ci/unity-builder@v4
         with:
-          unityVersion: 6000.3.4f1
+          unityVersion: 2022.3.0f1
           targetPlatform: StandaloneWindows64
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
