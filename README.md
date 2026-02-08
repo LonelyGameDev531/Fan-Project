@@ -23,7 +23,7 @@ RTS game based on **Castle Story (Sauropod Studio)**, made in Unity.
 **W / A / S / D:** Move the camera up, left, right and back respectively\
 **Press & Hold Scroll Wheel:** Move the camera angles\
 **Left Mouse Button:** Select Units\
-**Right Mouse Button:** Move Units
+**Right Mouse Button:** Move Units\
 **Left Shift Button:** Increase Camera movement speed 
 
 ## Dev Tools:
